@@ -12,9 +12,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/index.css" />
   </head>
   <body class="bg-[#141312] text-[#e6e1df] antialiased min-h-screen selection:bg-[#e0c298] selection:text-[#141312]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+        function loadFallback() {
+          if (window.__bundle_loaded) return;
+          var root = document.getElementById('root');
+          if (root && root.children && root.children.length > 0) return;
+          window.__bundle_loaded = true;
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.crossOrigin = 'anonymous';
+          s.src = '/assets/index.js';
+          document.body.appendChild(s);
+        }
+
+        window.addEventListener('error', function(e) {
+          if (e && e.target && e.target.src && e.target.src.indexOf('main.tsx') !== -1) {
+            loadFallback();
+          }
+        }, true);
+
+        // Fallback for static hosts (e.g. Netlify Drop) where TSX cannot be compiled on-the-fly
+        setTimeout(loadFallback, 300);
+      })();
+    </script>
   </body>
 </html>
