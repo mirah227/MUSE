@@ -1,0 +1,6 @@
+{
+  "name": "Aura Sène Haute Couture Editorial",
+  "description": "Official haute couture and high fashion editorial portfolio, digital comp card, runway archive, and direct booking desk for Aura Sène (Paris • Milan).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

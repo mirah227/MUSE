@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #141312;
+  --color-surface-dim: #141312;
+  --color-surface-bright: #3b3937;
+  --color-surface-container-lowest: #0f0e0d;
+  --color-surface-container-low: #1d1b1a;
+  --color-surface-container: #211f1e;
+  --color-surface-container-high: #2b2a28;
+  --color-surface-container-highest: #363433;
+  --color-surface-variant: #363433;
+  --color-on-surface: #e6e1df;
+  --color-on-surface-variant: #c8c7be;
+  --color-inverse-surface: #e6e1df;
+  --color-inverse-on-surface: #32302f;
+  --color-outline: #929189;
+  --color-outline-variant: #474741;
+  --color-primary: #ffffff;
+  --color-on-primary: #31312d;
+  --color-primary-container: #e5e2dc;
+  --color-secondary: #e0c298;
+  --color-on-secondary: #402d0f;
+  --color-secondary-container: #584323;
+  --color-on-secondary-container: #ceb188;
+
+  --font-serif: 'Bodoni Moda', Georgia, serif;
+  --font-display-hero: 'Bodoni Moda', Georgia, serif;
+  --font-display-hero-mobile: 'Bodoni Moda', Georgia, serif;
+  --font-headline-lg: 'Bodoni Moda', Georgia, serif;
+  --font-headline-lg-mobile: 'Bodoni Moda', Georgia, serif;
+  --font-headline-md: 'Bodoni Moda', Georgia, serif;
+  --font-headline-sm: 'Bodoni Moda', Georgia, serif;
+  --font-title-editorial: 'Bodoni Moda', Georgia, serif;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body-lg: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body-md: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-label-caps: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-label-meta: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --spacing-margin: 1.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 2rem;
+  --spacing-space-xl: 4rem;
+  --spacing-space-2xl: 6rem;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #141312;
+    color: #e6e1df;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  
+  .font-title-editorial,
+  .font-headline-sm,
+  .font-headline-md,
+  .font-headline-lg,
+  .font-headline-lg-mobile,
+  .font-display-hero,
+  .font-display-hero-mobile {
+    font-family: 'Bodoni Moda', Georgia, serif;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Custom editorial scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0e0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2a28;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e0c298;
+}
+
+@media print {
+  header, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
